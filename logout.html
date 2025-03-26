@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - banKS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2980b9;
+            --light-gray: #f4f4f4;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        .navbar nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .navbar nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .logout-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logout-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .logout-icon {
+            font-size: 72px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .logout-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .logout-card p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            margin-left: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .navbar nav {
+                margin-top: 15px;
+            }
+
+            .logout-card {
+                padding: 20px;
+                margin: 0 15px;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>banKS</h1>
+        <nav>
+            <a href="homepage.html">Back to Home</a>
+        </nav>
+    </div>
+
+    <div class="logout-container">
+        <div class="logout-card">
+            <div class="logout-icon">👋</div>
+            <h2>You've Been Logged Out</h2>
+            <p>Thank you for using banKS. Your session has been securely ended. We look forward to helping you manage your finances again soon.</p>
+            <div>
+                <a href="login1.html" class="btn">Log In Again</a>
+                <a href="homepage.html" class="btn btn-secondary">Return to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 <b>banKS</b>. All rights reserved.</p>
+    </div>
+</body>
+</html>

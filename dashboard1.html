@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>banKS Customer Dashboard</title>
+    <link rel="stylesheet" href="dashboard1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <h1>banKS</h1>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="logout.html">Logout</a>
+        </nav>       
+    </div>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h2>Customer Dashboard</h2>
+            <div class="user-info">
+                <div class="greeting">Welcome back, <span class="username">Karan Sehgal</span></div>
+                <div class="last-login">Last login: March 25, 2025 at 10:45 AM</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Account Summary Card -->
+            <div class="dashboard-card account-summary">
+                <div class="card-header">
+                    <h3>Account Summary</h3>
+                </div>
+                <div class="card-content">
+                    <div class="account-balance">
+                        <div class="balance-label">Current Balance</div>
+                        <div class="balance-amount">₹1,46,345.25</div>
+                    </div>
+                    <div class="account-details">
+                        <div class="account-row">
+                            <span>Account Number:</span>
+                            <span>XXXX-XXXX-5679</span>
+                        </div>
+                        <div class="account-row">
+                            <span>Account Type:</span>
+                            <span>Savings Account</span>
+                        </div>
+                        <div class="account-row">
+                            <span>Available Credit:</span>
+                            <span>₹56,579.25</span>
+                        </div>
+                    </div>
+                    <button class="btn view-details-btn">View Statement</button>
+                </div>
+            </div>
+
+            <!-- Quick Actions Card -->
+            <div class="dashboard-card quick-actions">
+                <div class="card-header">
+                    <h3>Quick Actions</h3>
+                </div>
+                <div class="card-content">
+                    <div class="action-buttons">
+                        <button class="action-btn transfer-btn"  onclick="window.location.href='transaction.html'">
+                            <span class="action-icon">↗</span>
+                            <span>Transfer</span>
+                        </button>
+                        <button class="action-btn pay-btn">
+                            <span class="action-icon">$</span>
+                            <span>Pay Bills</span>
+                        </button>
+                        <button class="action-btn deposit-btn">
+                            <span class="action-icon">+</span>
+                            <span>Deposit</span>
+                        </button>
+                        <button class="action-btn card-btn"  onclick="window.location.href='loan.html'">
+                            <span class="action-icon">💳</span>
+                            <span>Loan</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions Card -->
+            <div class="dashboard-card transactions">
+                <div class="card-header">
+                    <h3>Recent Transactions</h3>
+                </div>
+                <div class="card-content">
+                    <div class="transaction-list">
+                        <div class="transaction">
+                            <div class="transaction-info">
+                                <div class="transaction-name">Grocery Store</div>
+                                <div class="transaction-date">Mar 8, 2025</div>
+                            </div>
+                            <div class="transaction-amount debit">-₹2,568.25</div>
+                        </div>
+                        <div class="transaction">
+                            <div class="transaction-info">
+                                <div class="transaction-name">Salary Deposit</div>
+                                <div class="transaction-date">Mar 5, 2025</div>
+                            </div>
+                            <div class="transaction-amount credit">+₹6,721.25</div>
+                        </div>
+                        <div class="transaction">
+                            <div class="transaction-info">
+                                <div class="transaction-name">Electric Bill</div>
+                                <div class="transaction-date">Mar 3, 2025</div>
+                            </div>
+                            <div class="transaction-amount debit">-₹3,532.35</div>
+                        </div>
+                        <div class="transaction">
+                            <div class="transaction-info">
+                                <div class="transaction-name">Online Shopping</div>
+                                <div class="transaction-date">Mar 1, 2025</div>
+                            </div>
+                            <div class="transaction-amount debit">-₹10,534.25</div>
+                        </div>
+                    </div>
+                    <button class="btn view-all-btn">View All Transactions</button>
+                </div>
+            </div>
+
+            <!-- Spending Analysis Card -->
+            <div class="dashboard-card spending-analysis">
+                <div class="card-header">
+                    <h3>Spending Analysis</h3>
+                </div>
+                <div class="card-content">
+                    <canvas id="spendingChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Upcoming Payments Card -->
+            <div class="dashboard-card upcoming-payments">
+                <div class="card-header">
+                    <h3>Upcoming Payments</h3>
+                </div>
+                <div class="card-content">
+                    <div class="payment-list">
+                        <div class="payment">
+                            <div class="payment-info">
+                                <div class="payment-name">Home Loan</div>
+                                <div class="payment-date">Due in 5 days</div>
+                            </div>
+                            <div class="payment-amount">₹1,22,348.25</div>
+                        </div>
+                        <div class="payment">
+                            <div class="payment-info">
+                                <div class="payment-name">Car Insurance</div>
+                                <div class="payment-date">Due in 12 days</div>
+                            </div>
+                            <div class="payment-amount">₹78,921.65</div>
+                        </div>
+                        <div class="payment">
+                            <div class="payment-info">
+                                <div class="payment-name">Credit Card</div>
+                                <div class="payment-date">Due in 18 days</div>
+                            </div>
+                            <div class="payment-amount">₹6,568.25</div>
+                        </div>
+                    </div>
+                    <button class="btn manage-btn">Manage Payments</button>
+                </div>
+            </div>
+
+            <!-- Financial Goals Card -->
+            <div class="dashboard-card financial-goals">
+                <div class="card-header">
+                    <h3>Financial Goals</h3>
+                </div>
+                <div class="card-content">
+                    <div class="goal">
+                        <div class="goal-info">
+                            <div class="goal-name">Vacation Fund</div>
+                            <div class="goal-progress">₹3,500 / ₹5,000</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="goal">
+                        <div class="goal-info">
+                            <div class="goal-name">Emergency Fund</div>
+                            <div class="goal-progress">₹8,000 / ₹10,000</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="goal">
+                        <div class="goal-info">
+                            <div class="goal-name">New Car</div>
+                            <div class="goal-progress">₹12,000 / ₹25,000</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 48%;"></div>
+                        </div>
+                    </div>
+                    <button class="btn add-goal-btn">Add New Goal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p><b>© 2025 <span>banKS</span>. All rights reserved.</b></p>
+    </div>
+
+    <script>
+        // Chart.js implementation for spending analysis
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('spendingChart').getContext('2d');
+            const spendingChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Housing', 'Food', 'Transportation', 'Utilities', 'Entertainment', 'Other'],
+                    datasets: [{
+                        data: [35, 20, 15, 10, 12, 8],
+                        backgroundColor: [
+                            '#1E73BE',
+                            '2CA6DF',
+                            '#4CAAA1',
+                            '#6E6E6E',
+                            '#9EB5D4',
+                            '#D4D4D4'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+        });
+
+
+    </script>
+</body>
+</html>

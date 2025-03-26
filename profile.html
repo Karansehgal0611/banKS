@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>banKS - Customer Profile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2980b9;
+            --light-gray: #f4f4f4;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .dashboard-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-right: 20px;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-nav a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            background-color: var(--secondary-color);
+        }
+
+        .sidebar-nav a i {
+            margin-right: 10px;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 4px solid var(--accent-color);
+        }
+
+        .profile-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            color: #666;
+        }
+
+        .profile-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .detail-section {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .detail-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .profile-details {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-pic {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav>
+                <ul class="sidebar-nav">
+                    <li><a href="dashboard.html" class="active">
+                        <i>👤</i> Profile
+                    </a></li>
+                    <li><a href="accounts.html">
+                        <i>💳</i> Accounts
+                    </a></li>
+                    <li><a href="transactions.html">
+                        <i>📊</i> Transactions
+                    </a></li>
+                    <li><a href="statements.html">
+                        <i>📄</i> Statements
+                    </a></li>
+                    <li><a href="support.html">
+                        <i>❓</i> Support
+                    </a></li>
+                    <li><a href="logout.html">
+                        <i>🚪</i> Logout
+                    </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="profile-header">
+                <img src="/images/images.jpeg" alt="Profile Picture" class="profile-pic">
+                <div class="profile-info">
+                    <h2>Karan Sehgal</h2>
+                    <p>Customer ID: BNK5678901</p>
+                    <p>Member Since: January 2022</p>
+                </div>
+            </div>
+
+            <div class="profile-details">
+                <div class="detail-section">
+                    <h3>Personal Information</h3>
+                    <div class="detail-item">
+                        <strong>Full Name</strong>
+                        <span>Karan Sehgal</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Email</strong>
+                        <span>karan.sehgal@gmail.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Phone</strong>
+                        <span> (+91) 8826236504</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Date of Birth</strong>
+                        <span>October 03, 2004</span>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Account Details</h3>
+                    <div class="detail-item">
+                        <strong>Account Type</strong>
+                        <span>Checking</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Account Number</strong>
+                        <span>**** **** 5678</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Branch</strong>
+                        <span>Downtown Office</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Verification Status</strong>
+                        <span>Fully Verified</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="edit-profile.html" class="btn">Edit Profile</a>
+        </main>
+    </div>
+
+    <script>
+        // Optional: Add interactivity or dynamic content loading
+        document.addEventListener('DOMContentLoaded', () => {
+            // Example: Highlight active sidebar item
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

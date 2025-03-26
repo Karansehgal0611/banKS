@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="login1.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>banKS</h1>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="signup.html">Register</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>       
+    </div>
+
+    <div class="container">
+        <div class="login-box">
+            <div class="login-selector">
+                <button id="customer-btn" class="active">Customer</button>
+                <button id="employee-btn">Employee</button>
+            </div>
+            
+            <h2 id="login-title">Customer Login</h2>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="employee-options" id="employee-options">
+                    <div class="input-group">
+                        <label for="employee-type">Employee Type</label>
+                        <select id="employee-type" name="employee-type">
+                            <option value="manager">Manager</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mfa-toggle">
+                    <input type="checkbox" id="use-mfa" name="use-mfa">
+                    <label for="use-mfa">Use Multi-Factor Authentication</label>
+                </div>
+                
+                <div class="mfa-section" id="mfa-section">
+                    <div class="input-group">
+                        <label for="mfa-code">Authentication Code</label>
+                        <input type="text" id="mfa-code" name="mfa-code" placeholder="Enter verification code">
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p><b>© 2025 <span>banKS</span>. All rights reserved.</b></p>
+    </div>
+    
+
+
+    </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const customerBtn = document.getElementById('customer-btn');
+        const employeeBtn = document.getElementById('employee-btn');
+        const loginTitle = document.getElementById('login-title');
+        const employeeOptions = document.getElementById('employee-options');
+        const loginForm = document.getElementById('login-form');
+        const useMfa = document.getElementById('use-mfa');
+        const mfaSection = document.getElementById('mfa-section');
+        
+        // Toggle between customer and employee login
+        customerBtn.addEventListener('click', function() {
+            customerBtn.classList.add('active');
+            employeeBtn.classList.remove('active');
+            loginTitle.textContent = 'Customer Login';
+            employeeOptions.style.display = 'none';
+        });
+        
+        employeeBtn.addEventListener('click', function() {
+            employeeBtn.classList.add('active');
+            customerBtn.classList.remove('active');
+            loginTitle.textContent = 'Employee Login';
+            employeeOptions.style.display = 'block';
+        });
+        
+        // Toggle MFA section visibility
+        useMfa.addEventListener('change', function() {
+            mfaSection.style.display = this.checked ? 'block' : 'none';
+        });
+        
+        // Handle form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const isEmployee = employeeBtn.classList.contains('active');
+            let userType = 'customer';
+            
+            if (isEmployee) {
+                userType = document.getElementById('employee-type').value;
+            }
+            
+            // In a real app, you would handle authentication here
+            console.log('Login attempt:', {
+                username,
+                password: '********', // Not logging actual password
+                userType,
+                useMfa: useMfa.checked
+            });
+            
+            // For demo purposes, redirect based on user type
+            if (userType === 'customer') {
+                alert('Customer login successful! Redirecting to dashboard...');
+                window.location.href = 'dashboard1.html'
+            } else if (userType === 'manager') {
+                alert('Manager login successful! Redirecting to manager dashboard...');
+                // window.location.href = 'manager-dashboard.html';
+            } else if (userType === 'admin') {
+                alert('Admin login successful! Redirecting to admin dashboard...');
+                // window.location.href = 'admin-dashboard.html';
+            }
+        });
+    });
+</script>
+
+</html>
