@@ -11,6 +11,9 @@ This project was developed as part of **EX10: Storyboarding and UI Design** for 
 **Team No:** 24  
 **Date of Submission:** 26/03/25  
 
+![image](https://github.com/user-attachments/assets/1c04188c-79dc-420d-96d2-d3536c0491e1)
+
+
 ## 👥 User Personas
 
 The system supports 3 types of users:
